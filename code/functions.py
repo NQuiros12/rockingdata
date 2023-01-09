@@ -23,12 +23,13 @@ def download_csv(link: str,
                       )
     print("Connecting to s3...")
     print(f"Accessing the '{bucket_name}' bucket...")
+    #Check if the bucket exists
     try:
         s3.head_bucket(Bucket=bucket_name)
         print("Bucket exists!!")
     except botocore.exceptions.ClientError:
         print("Bucket does not exist")
-    
+    #Download the file and store it in the data folder
     
     print("BUCKET_NAME: {}".format(BUCKET_NAME))
     print("FILE_NAME: {}".format(file_name))
@@ -36,6 +37,6 @@ def download_csv(link: str,
     print(
         f"Downloading the '{bucket_name}' from the bucket and storing the csv in 'data/{file_name}' ")
     return None
-
+download_csv(LINK)
 download_csv(LINK,file_name="netflix_titles.csv")
 
