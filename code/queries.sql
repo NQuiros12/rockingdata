@@ -9,11 +9,11 @@ GROUP by actors.actor
 order by appearances desc
 limit 1;
 -- Top 10 de actores participantes considerando ambas plataformas en el
---año actual. Se aprecia flexibilidad.
+--año actual. Se aprecia flexibilidad. El año actual y 2022 no tiene registros
 select actors.actor,count(actors.actor) appearances,release_year
 from actors
 left join shows on shows.show_id = actors.show_id 
-where release_year = "2021" 
+where release_year = 2021 
 GROUP by actors.actor 
 order by appearances desc
 limit 10;
