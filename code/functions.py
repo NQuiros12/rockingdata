@@ -1,6 +1,6 @@
-import boto3
-import re
-import botocore
+import boto3 #for connecting to s3
+import re #for regex
+import botocore #for s3 exceptions
 # Key and secret key from RD
 KEY = "AKIA2NU5TZR6RVMXSOKK"
 SECRET_K = "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"
